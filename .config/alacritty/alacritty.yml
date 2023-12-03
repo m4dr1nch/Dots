@@ -1,0 +1,47 @@
+window:
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: true
+  opacity: 0.8
+
+font:
+  family: Source Code Pro
+  size: 10
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+colors:
+  primary:
+    background: '#1B2631'
+    foreground: '#E1E1E1'
+
+  normal:
+    black: '#888888'
+    red: '#F04E83'
+    green: '#67FCBD'
+    yellow: '#EAF345'
+    blue: '#0FA4FF'
+    magenta: '#C39BD3'
+    cyan: '#64DBFF'
+    white: '#E1E1E1'
+
+  bright:
+    black: '#888888'
+    red: '#F04E83'
+    green: '#67FCBD'
+    yellow: '#EAF345'
+    blue: '#0FA4FF'
+    magenta: '#C39BD3'
+    cyan: '#64DBFF'
+    white: '#E1E1E1'
+
+bell:
+  duration: 0
+
+shell:
+  program: /usr/bin/tmux
