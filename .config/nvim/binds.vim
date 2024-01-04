@@ -31,3 +31,10 @@ inoremap <C-S-Left> <C-O>0
 " Redo the undo with `CTRL + y`
 inoremap <C-Z> <C-O>u
 inoremap <C-Y> <C-O><C-R>
+
+" Bufferline
+nnoremap <silent><Tab>l :BufferLineCycleNext<CR>
+nnoremap <silent><Tab>h :BufferLineCyclePrev<CR>
+
+nnoremap <silent><Tab>L :BufferLineMoveNext<CR>
+nnoremap <silent><Tab>H :BufferLineMovePrev<CR>

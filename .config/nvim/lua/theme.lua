@@ -15,13 +15,12 @@ require('catppuccin').setup {
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        component_separators = '',
-        section_separators = '',
+        section_separators = { left = '', right = ''},
         disabled_filetypes = {},
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = false,
-        padding = 2,
+        globalstatus = true,
+        padding = 1,
         refresh = {
             statusline = 1000,
             tabline = 1000,
@@ -30,10 +29,10 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {''},
+        lualine_b = {'encoding'},
         lualine_c = {''},
-        lualine_x = {'filetype'},
-        lualine_y = {''},
+        lualine_x = {'progress'},
+        lualine_y = {'filetype'},
         lualine_z = {'filename'}
     },
     inactive_sections = {
@@ -140,5 +139,6 @@ vim.api.nvim_exec(
 [[
 hi Visual guifg=#0FA4FF guibg=#222222 gui=none
 hi Search guifg=#FFAF87 guibg=#222222 gui=none
+hi EndOfBuffer guifg=#0FA4FF
 ]],
 true)
