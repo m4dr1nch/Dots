@@ -15,11 +15,21 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'mg979/vim-visual-multi'
     Plug 'kylechui/nvim-surround'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'tomasky/bookmarks.nvim'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'stevearc/conform.nvim'
+    
     Plug (
         'akinsho/bufferline.nvim', {tag='*'}
-    )
-    Plug (
-        'neoclide/coc.nvim', {branch='release'}
     )
     Plug (
         'catppuccin/nvim', {as='catppuccin'}
@@ -28,7 +38,8 @@ vim.call('plug#end')
 
 require('nvim-autopairs').setup()
 require('colorizer').setup()
-require("nvim-surround").setup()
+require('nvim-surround').setup()
+require('conform').setup()
 
 -- Load binds `binds.vim`
 vim.cmd('source ~/.config/nvim/binds.vim')
@@ -37,4 +48,5 @@ vim.cmd('source ~/.config/nvim/binds.vim')
 require('theme')
 require('treesitter')
 require('nvimtree')
-require('coc')
+require('lspthings')
+require('book')
