@@ -13,10 +13,16 @@ shrot=0x64DBFF
 about=0xF1F1F1
 
 [shrots]
+Ranger = [
+    {bind = "CTRL + d", about = "Drag & Drop"},
+    {bind = "V", about = "Enter visual mode (Selects all files)"},
+    {bind = "uV", about = "Unselects a file (Visual mode)"},
+]
 Neovim = [
     {bind = "h, j, k, l", about = "Move around"},
     {bind = "w, b", about = "Move forwards and backwards a word"},
     {bind = "gg, G", about = "Jump to top / bottom"},
+    {bind = "V", about = "Visual select a line"},
     {bind = "x", about = "Delete a character"},
     {bind = "CTRL + w", about = "Delete a word forward"},
     {bind = "dw", about = "Delete a word backward"},
@@ -32,16 +38,28 @@ Neovim = [
     {bind = "CTRL + w + =", about = "Resize all panes to equal size"},
     {bind = "CTRL + w + s", about = "Split horizontal"},
     {bind = "CTRL + w + v", about = "Split vertical"},
-    {bind = "CTLR + N", about = "Open multi-cursor"},
-    {bind = "CTRL + ARROW", about = "Multi-cursor select"},
+
+]
+"Neovim Plugins" = [
     {bind = "S", about = "Surround prefix"},
     {bind = "CTRL + t", about = "Open NvimTree"},
-    {bind = "CTRL + h", about = "Search and replace"},
-    {bind = "TAB + l, h", about = "Bufferline next and previous tab"},
-    {bind = "TAB + L, H", about = "Bufferline move tab left and right"},
+    {bind = "CTLR + N", about = "Open multi-cursor"},
+    {bind = "CTRL + ARROW", about = "Multi-cursor select"},
     {bind = "\\ + ff", about = "Search file (Telescope)"},
     {bind = "\\ + fb", about = "Search buffer (Telescope)"},
     {bind = "\\ + fh", about = "Search help tags (Telescope)"},
+    {bind = "\\ + hh", about = "Open selection (Harpoon)"},
+    {bind = "\\ + ha", about = "Add buffer to harpoon (Harpoon)"},
+    {bind = "\\ + hp", about = "Go to previous buffer (Harpoon)"},
+    {bind = "\\ + hn", about = "Go to next buffer (Harpoon)"},
+    {bind = "TAB + l, h", about = "Bufferline next and previous tab"},
+    {bind = "TAB + L, H", about = "Bufferline move tab left and right"},
+    {bind = "mm, mc", about = "Make / Clear a bookmark (Bookmarks)"},
+    {bind = "mn, mp", about = "Next / Previous bookmark (Bookmarks)"},
+    {bind = "mm, mc", about = "Make / Clear a bookmark (Bookmarks)"},
+    {bind = "ml", about = "List all bookmarks (Bookmarks)"},
+    {bind = "mi", about = "Edit icon (Bookmarks)"},
+    {bind = "t, w, f, n", about = "Icons: task, warning, function, noodles (Bookmarks)"},
 ]
 Vimium = [
     {bind = "h, j, k, l", about = "Move left, down, up, right  around"},
@@ -69,10 +87,6 @@ I3 = [
     {bind = "WIN + R", about = "Reload I3 config"},
     {bind = "WIN + S", about = "Run flameshot"},
     {bind = "WIN + A", about = "Run shrots"},
-]
-Flameshot = [
-    {bind = "CTRL + c", about = "Copy image"},
-    {bind = "CTRL + x", about = "Pin image to screen"},
 ]
 Tmux = [
     {bind = "CTRL + q", about = "Split horizontal"},

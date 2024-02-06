@@ -4,10 +4,10 @@ PLUGIN: bookmarks
 require('bookmarks').setup({
     save_file = vim.fn.expand "$HOME/.config/nvim/.bookmarks", 
     keywords =  {
-        ["@t"] = "☑️ ",
-        ["@w"] = "⚠️ ", 
-        ["@f"] = "⛏ ", 
-        ["@n"] = " ", 
+        ["t"] = "☑️ ",
+        ["w"] = "⚠️ ", 
+        ["f"] = "⛏ ", 
+        ["n"] = "󱅾 ", 
     },
     on_attach = function(bufnr)
         local bm = require "bookmarks"
