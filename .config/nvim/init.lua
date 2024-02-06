@@ -1,5 +1,9 @@
+-- Load base configuration
 require('base')
 
+--
+-- Install plugins
+--
 Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'tpope/vim-sensible'
@@ -26,27 +30,25 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
-    Plug 'stevearc/conform.nvim'
-    
     Plug (
         'akinsho/bufferline.nvim', {tag='*'}
+    )
+    Plug (
+        'ThePrimeagen/harpoon', {
+            branch='harpoon2',
+            dependecies={
+                'nvim-lua/plenary.nvim',
+                'nvim-telescope/telescope.nvim'
+            }
+        }
     )
     Plug (
         'catppuccin/nvim', {as='catppuccin'}
     )
 vim.call('plug#end')
 
-require('nvim-autopairs').setup()
-require('colorizer').setup()
-require('nvim-surround').setup()
-require('conform').setup()
+-- Configure plugins
+require('plugins')
 
 -- Load binds `binds.vim`
 vim.cmd('source ~/.config/nvim/binds.vim')
-
--- Found under `lua/`
-require('theme')
-require('treesitter')
-require('nvimtree')
-require('lspthings')
-require('book')

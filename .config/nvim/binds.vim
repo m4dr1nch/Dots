@@ -2,7 +2,8 @@
 " Global
 " ======
 " Start search & replace commad
-map <C-h> :%s/
+nnoremap <C-h> :%s/
+vnoremap <C-h> :s/
 " Toggle NvimTree
 map <silent> <C-t> :NvimTreeToggle<CR>
 
