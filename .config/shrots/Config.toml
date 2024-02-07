@@ -54,6 +54,7 @@ Neovim = [
     {bind = "\\ + hn", about = "Go to next buffer (Harpoon)"},
     {bind = "TAB + l, h", about = "Bufferline next and previous tab"},
     {bind = "TAB + L, H", about = "Bufferline move tab left and right"},
+    {bind = "\\ + bd", about = "Delete current buffer"},
     {bind = "mm, mc", about = "Make / Clear a bookmark (Bookmarks)"},
     {bind = "mn, mp", about = "Next / Previous bookmark (Bookmarks)"},
     {bind = "mm, mc", about = "Make / Clear a bookmark (Bookmarks)"},

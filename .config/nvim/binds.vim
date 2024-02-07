@@ -40,6 +40,8 @@ nnoremap <silent><Tab>h :BufferLineCyclePrev<CR>
 nnoremap <silent><Tab>L :BufferLineMoveNext<CR>
 nnoremap <silent><Tab>H :BufferLineMovePrev<CR>
 
+nnoremap <silent><leader>bd :<C-U>bprevious <bar> bdelete #<CR>
+
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
