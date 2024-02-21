@@ -148,6 +148,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+s exec /usr/bin/flameshot gui
 bindsym $mod+Shift+a exec /usr/bin/shrots
 bindsym $mod+Shift+p exec /usr/bin/betterlockscreen -l blur
+bindsym $mod+c exec --no-startup-id /usr/bin/rofi -modi "clipboard:greenclip print" -show clipboard
 
 client.focused		#64DBFF #64DBFF #222222 #64DBFF #64DBFF
 client.focused_inactive	#0FA4FF #0FA4FF #F6F5F4 #0FA4FF #0FA4FF
@@ -155,6 +156,7 @@ client.unfocused	#0FA4FF #0FA4FF #F6F5F4 #0FA4FF #0FA4FF
 client.urgent		#F04E83 #F04E83 #222222 #F04E83 #F04E83
 
 exec_always --no-startup-id picom
+exec_always --no-startup-id greenclip daemon>/dev/null
 exec_always --no-startup-id cpupower-gui config
 exec_always --no-startup-id setdesk 2>/dev/null
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
