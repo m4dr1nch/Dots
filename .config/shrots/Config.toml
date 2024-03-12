@@ -27,6 +27,7 @@ Neovim = [
     {bind = "x", about = "Delete a character"},
     {bind = "dw, db", about = "Delete a word forward & backward"},
     {bind = "d0, d$", about = "Delete until end, start of line"},
+    {bind = "o, O", about = "Newline & enter in insert mode"},
     {bind = "di + CHR", about = "Delete between a character"},
     {bind = "yi + CHR", about = "Copy between a character"},
     {bind = "CTRL + h", about = "Search and replace"},
