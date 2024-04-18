@@ -29,6 +29,9 @@ alias ls="exa -l -g --icons --git -s type"
 # Using `eza` fro tab completion
 # Replacement for "tree"
 alias tree="exa -1 --icons --tree --git-ignore -s type"
+# Alias for copy
+alias xsc="xclip -selection c"
+
 
 
 # =======
@@ -51,3 +54,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # =============
 # Starship prompt configuration
 eval "$(starship init zsh)"
+
+export PATH="$PATH:$HOME/.cargo/bin"
