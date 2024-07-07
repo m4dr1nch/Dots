@@ -158,14 +158,14 @@ client.urgent		#F04E83 #F04E83 #222222 #F04E83 #F04E83
 exec_always --no-startup-id picom
 exec_always --no-startup-id greenclip daemon>/dev/null
 exec_always --no-startup-id cpupower-gui config
-exec_always --no-startup-id setdesk 2>/dev/null
+exec_always --no-startup-id redshift -P -O 2900
+exec_always --no-startup-id feh --bg-fill ~/.local/share/wallpapers/stars.png 
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id keepassxc
 exec_always --no-startup-id setxkbmap lv
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
 
-gaps inner 8
+gaps inner 4
 gaps outer 0
 
 default_border pixel
