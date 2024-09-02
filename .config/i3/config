@@ -30,6 +30,7 @@ bindsym $mod+Shift+q kill
 # start rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -font 'Source Code Pro 12'
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run -font 'Source Code Pro 12'
+bindsym $mod+s exec --no-startup-id rofi -modi crun -show crun -font 'Source Code Pro 12'
 
 #
 # Change focus
@@ -60,7 +61,7 @@ bindsym $mod+Shift+Right move right
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -156,8 +157,8 @@ client.unfocused	#0FA4FF #0FA4FF #F6F5F4 #0FA4FF #0FA4FF
 client.urgent		#F04E83 #F04E83 #222222 #F04E83 #F04E83
 
 exec --no-startup-id prime-offload
-exec --no-startup-id autorandr --change
-# exec --no-startup-id picom
+
+exec --no-startup-id autorandr
 
 exec --no-startup-id greenclip daemon>/dev/null
 exec --no-startup-id cpupower-gui config
@@ -167,9 +168,14 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id setxkbmap lv
 exec_always --no-startup-id redshift -P -O 2900
 exec_always --no-startup-id feh --bg-fill ~/.local/share/wallpapers/stars.png 
+
 exec_always --no-startup-id sleep 1; ~/.config/polybar/launch.sh 
 
 gaps inner 4
 gaps outer 0
 
-default_border pixel
+default_border pixel 2
+
+# Android studio
+for_window [title="^Android Emulator - mobile:[0-9]+$"] floating enable, border normal, move position mouse
+for_window [title="^Android Emulator - mobile_playstore:[0-9]+$"] floating enable, border normal, move position mouse

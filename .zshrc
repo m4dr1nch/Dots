@@ -56,3 +56,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/.cargo/bin"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+# Android SDK
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# GO
+export PATH=$PATH:~/go/bin
