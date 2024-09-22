@@ -31,6 +31,8 @@ alias ls="exa -l -g --icons --git -s type"
 alias tree="exa -1 --icons --tree --git-ignore -s type"
 # Alias for copy
 alias xsc="xclip -selection c"
+# Alias for tun0 IP grabbing (printf removes newline)
+alias tun0="printf $(ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}') | xsc"
 
 
 
