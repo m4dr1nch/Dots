@@ -28,9 +28,9 @@ bindsym $mod+Return split h; exec --no-startup-id alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun -font 'Source Code Pro 12'
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run -font 'Source Code Pro 12'
-bindsym $mod+s exec --no-startup-id rofi -modi crun -show crun -font 'Source Code Pro 12'
+bindsym $mod+d exec --no-startup-id rofi -show drun -font 'Source Code Pro 10'
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run -font 'Source Code Pro 10'
+bindsym $mod+s exec --no-startup-id rofi -modi crun -show crun -font 'Source Code Pro 10'
 
 #
 # Change focus
@@ -157,11 +157,11 @@ client.unfocused	#0FA4FF #0FA4FF #F6F5F4 #0FA4FF #0FA4FF
 client.urgent		#F04E83 #F04E83 #222222 #F04E83 #F04E83
 
 exec --no-startup-id prime-offload
+#exec --no-startup-id picom &
+exec --no-startup-id autorandr --default DEFAULT
+exec --no-startup-id cpupower-gui config > /dev/null
 
-exec --no-startup-id autorandr
-
-exec --no-startup-id greenclip daemon>/dev/null
-exec --no-startup-id cpupower-gui config
+exec --no-startup-id greenclip daemon > /dev/null
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec --no-startup-id nm-applet
 
@@ -169,12 +169,22 @@ exec_always --no-startup-id setxkbmap lv
 exec_always --no-startup-id redshift -P -O 2900
 exec_always --no-startup-id feh --bg-fill ~/.local/share/wallpapers/stars.png 
 
-exec_always --no-startup-id sleep 1; ~/.config/polybar/launch.sh 
+default_border pixel 1
 
-gaps inner 4
-gaps outer 0
+bar {
+    i3bar_command i3bar --transparency
+    status_command i3status --config ~/.config/i3/i3status.conf
+    font pango:Source Code Pro 9
+    colors {
+        background #15161900
+        statusline #f1f1f1
 
-default_border pixel 2
+        focused_workspace  #000000 #64DBFF #222222
+        active_workspace   #ffffff #333333
+        inactive_workspace #888888 #222222
+        urgent_workspace   #ffffff #F04E83
+    }
+}
 
 # Android studio
 for_window [title="^Android Emulator - mobile:[0-9]+$"] floating enable, border normal, move position mouse
