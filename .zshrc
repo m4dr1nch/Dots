@@ -8,6 +8,7 @@ export SAVEHIST=1000
 export HISTFILE="$HOME/.zsh_history"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+export MANPAGER='nvim +Man!'
 
 
 # =========
@@ -29,12 +30,21 @@ alias ls="exa -l -g --icons --git -s type"
 # Using `eza` fro tab completion
 # Replacement for "tree"
 alias tree="exa -1 --icons --tree --git-ignore -s type"
-# Alias for copy
+# Alias for copy / clipboard
 alias xsc="xclip -selection c"
-# Alias for tun0 IP grabbing (printf removes newline)
-alias tun0="printf $(ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}') | xsc"
-
-
+alias xoc="xclip -o -selection c"
+alias chepys="chepy \$(xoc)"
+# Bat
+alias bat="bat --plain -P"
+# Clipboard encodings
+# Base64 Encode
+alias xbe="xclip -o -selection c | base64 -w 0 | xclip -selection c" 
+# Base64 Decode
+alias xbd="xclip -o -selection c | base64 -d | xclip -selection c" 
+# URL Encoding
+alias xue="xclip -o -selection c | ~/.cargo/bin/urle | xclip -selection c" 
+# URL Decoding 
+alias xud="xclip -o -selection c | ~/.cargo/bin/urld | xclip -selection c" 
 
 # =======
 # PLUGINS
@@ -42,6 +52,8 @@ alias tun0="printf $(ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 # Import plugins
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # Clear suggestions on paste
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
@@ -68,3 +80,6 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 # GO
 export PATH=$PATH:~/go/bin
+
+# Ruby
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.3.0/bin"
