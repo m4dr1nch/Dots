@@ -45,6 +45,8 @@ alias xbd="xclip -o -selection c | base64 -d | xclip -selection c"
 alias xue="xclip -o -selection c | ~/.cargo/bin/urle | xclip -selection c" 
 # URL Decoding 
 alias xud="xclip -o -selection c | ~/.cargo/bin/urld | xclip -selection c" 
+# Format JSON 
+alias xjq="xclip -o -selection c | jq | xclip -selection c" 
 
 # =======
 # PLUGINS
